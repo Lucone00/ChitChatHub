@@ -1,5 +1,14 @@
 <div class="container border border-dark-subtle rounded-4 mt-4 p-0">
   <div class="sidebar">
+    <div class="chat-header p-3">
+      <ng-container *ngIf="!selectedGroup; else groupNameTemplate">
+        ChitChatHub
+      </ng-container>
+      <ng-template #groupNameTemplate>
+        {{ selectedGroup.groupName }}
+      </ng-template>
+    </div>
+
     <div *ngIf="!selectedGroup">
       <div
         *ngFor="let group of groups"
