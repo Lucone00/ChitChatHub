@@ -1,1 +1,21 @@
-<p>chat-container works!</p>
+<div class="container">
+  <div class="sidebar">
+    <div *ngIf="!selectedGroup">
+      <div *ngFor="let group of groups" (click)="selectGroup(group)">
+        {{ group.name }}
+      </div>
+    </div>
+
+    <div *ngIf="selectedGroup">
+      <div *ngFor="let chat of selectedGroup.chats" (click)="selectChat(chat)">
+        {{ chat.name }}
+      </div>
+    </div>
+  </div>
+
+  <div class="chat-details bg-warning-subtle">
+    <div *ngIf="selectedChat">
+      <p>{{ selectedChat.name }}</p>
+    </div>
+  </div>
+</div>

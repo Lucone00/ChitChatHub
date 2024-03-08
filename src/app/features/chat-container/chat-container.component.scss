@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  border-radius: 1rem;
+  border: 1px solid gray;
+}
+
+.sidebar {
+  width: 33.33%;
+  border-right: 1px solid #ccc;
+  padding: 1rem;
+}
+
+.chat-details {
+  flex-grow: 1;
+  padding: 1rem;
+}
