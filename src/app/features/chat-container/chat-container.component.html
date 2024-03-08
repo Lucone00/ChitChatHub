@@ -1,7 +1,11 @@
-<div class="container">
+<div class="container border border-dark-subtle rounded-4 mt-4 p-0">
   <div class="sidebar">
     <div *ngIf="!selectedGroup">
-      <div *ngFor="let group of groups" (click)="selectGroup(group)">
+      <div
+        *ngFor="let group of groups"
+        (click)="selectGroup(group)"
+        class="border-bottom p-3"
+      >
         {{ group.groupName }}
       </div>
     </div>
@@ -9,6 +13,7 @@
     <div *ngIf="selectedGroup">
       <div
         *ngFor="let chatList of selectedGroup.chats"
+        class="border-bottom p-3"
         (click)="selectChat(chatList)"
       >
         {{ chatList.chat }}
@@ -16,7 +21,7 @@
     </div>
   </div>
 
-  <div class="chat-details bg-warning-subtle">
+  <div class="chat-details bg-warning-subtle p-3">
     <div *ngIf="selectedChat">
       <p>{{ selectedChat.chat }}</p>
     </div>

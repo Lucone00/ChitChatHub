@@ -1,16 +1,18 @@
 .container {
   display: flex;
-  border-radius: 1rem;
-  border: 1px solid gray;
+  height: 70vh;
+  width: 70%;
 }
 
 .sidebar {
-  width: 33.33%;
+  width: 30%;
   border-right: 1px solid #ccc;
-  padding: 1rem;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
 }
 
 .chat-details {
   flex-grow: 1;
-  padding: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
