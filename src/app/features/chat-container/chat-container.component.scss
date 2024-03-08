@@ -4,8 +4,7 @@
   width: 70%;
 }
 
-.chat-header{
-  height: 4rem;
+.chat-header {
   border-bottom: 1px solid gray;
   font-size: 1.6rem;
 }
@@ -21,4 +20,10 @@
   flex-grow: 1;
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
+}
+
+.chat-name {
+  font-size: 1.3rem;
+  padding: 0.25rem;
+  border-top-right-radius: 1rem;
 }

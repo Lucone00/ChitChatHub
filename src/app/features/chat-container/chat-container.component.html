@@ -30,9 +30,9 @@
     </div>
   </div>
 
-  <div class="chat-details bg-warning-subtle p-3">
-    <div *ngIf="selectedChat">
-      <p>{{ selectedChat.chat }}</p>
+  <div class="chat-details bg-warning-subtle">
+    <div *ngIf="selectedChat" class="chat-name border-bottom bg-warning bg-gradient">
+      <p class="m-3">{{ selectedChat.chat }}</p>
     </div>
   </div>
 </div>
