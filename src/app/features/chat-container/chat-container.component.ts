@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IChat, IChatList } from '../interfaces/IChatGroups.interface';
 
 @Component({
   selector: 'app-chat-container',
@@ -6,32 +7,32 @@ import { Component } from '@angular/core';
   styleUrls: ['./chat-container.component.scss'],
 })
 export class ChatContainerComponent {
-  selectedGroup: any;
-  selectedChat: any;
+  selectedGroup!: IChatList;
+  selectedChat!: IChat | null;
 
-  groups = [
+  groups: IChatList[] = [
     {
-      name: 'Condominio 1',
+      groupName: 'Condominio 1',
       chats: [
-        { id: 1, name: 'David' },
-        { id: 2, name: 'Paolo' },
+        { id: 1, chat: 'David' },
+        { id: 2, chat: 'Paolo' },
       ],
     },
     {
-      name: 'Condominio 2',
+      groupName: 'Condominio 2',
       chats: [
-        { id: 3, name: 'Maria' },
-        { id: 4, name: 'Federica' },
+        { id: 3, chat: 'Maria' },
+        { id: 4, chat: 'Federica' },
       ],
     },
   ];
 
-  selectGroup(group: any): void {
+  selectGroup(group: IChatList): void {
     this.selectedGroup = group;
     this.selectedChat = null;
   }
 
-  selectChat(chat: any): void {
+  selectChat(chat: IChat): void {
     this.selectedChat = chat;
   }
 }

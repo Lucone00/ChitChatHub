@@ -2,20 +2,23 @@
   <div class="sidebar">
     <div *ngIf="!selectedGroup">
       <div *ngFor="let group of groups" (click)="selectGroup(group)">
-        {{ group.name }}
+        {{ group.groupName }}
       </div>
     </div>
 
     <div *ngIf="selectedGroup">
-      <div *ngFor="let chat of selectedGroup.chats" (click)="selectChat(chat)">
-        {{ chat.name }}
+      <div
+        *ngFor="let chatList of selectedGroup.chats"
+        (click)="selectChat(chatList)"
+      >
+        {{ chatList.chat }}
       </div>
     </div>
   </div>
 
   <div class="chat-details bg-warning-subtle">
     <div *ngIf="selectedChat">
-      <p>{{ selectedChat.name }}</p>
+      <p>{{ selectedChat.chat }}</p>
     </div>
   </div>
 </div>
