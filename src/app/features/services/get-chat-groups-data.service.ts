@@ -9,6 +9,7 @@ export class GetChatGroupsDataService {
     return [
       {
         groupName: 'Condominio 1',
+        id:1,
         chats: [
           { id: 1, chat: 'David' },
           { id: 2, chat: 'Paolo' },
@@ -16,6 +17,7 @@ export class GetChatGroupsDataService {
       },
       {
         groupName: 'Condominio 2',
+        id: 2,
         chats: [
           { id: 3, chat: 'Maria' },
           { id: 4, chat: 'Federica' },

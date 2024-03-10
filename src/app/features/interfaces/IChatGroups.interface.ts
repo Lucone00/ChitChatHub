@@ -1,5 +1,6 @@
 export interface IChatList {
   groupName: string;
+  id: number
   chats: IChat[];
 }
 
