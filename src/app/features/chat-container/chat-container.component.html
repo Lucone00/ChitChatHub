@@ -33,23 +33,34 @@
     </div>
   </div>
 
-  <div class="chat-details bg-warning-subtle">
-    <div *ngIf="selectedChat">
-
+  <div class="chat-details bg-warning-subtle d-flex flex-column h-100">
+    <div *ngIf="selectedChat" class="flex-grow-1 d-flex flex-column">
       <div class="chat-name border-bottom bg-warning bg-gradient">
         <p class="m-3">{{ selectedChat.chat }}</p>
       </div>
 
-      <div *ngFor="let message of messages" class="message">
+      <div *ngFor="let message of messages" class="message p-2">
         <strong>{{ message.sender }}:</strong> {{ message.content }} ({{
-          message.timestamp | date: 'HH:mm'
+          message.timestamp | date : "HH:mm"
         }})
       </div>
 
+      <div class="flex-grow-1"></div>
+      
       <div class="message-input">
         <div class="form-outline" data-mdb-input-init>
-          <textarea [(ngModel)]="newMessage" class="form-control" id="textAreaExample" rows="4"></textarea>
-          <label (click)="sendMessage()" class="form-label" for="textAreaExample">Send</label>
+          <textarea
+            [(ngModel)]="newMessage"
+            class="form-control"
+            id="textAreaExample"
+            rows="4"
+          ></textarea>
+          <label
+            (click)="sendMessage()"
+            class="form-label"
+            for="textAreaExample"
+            >Send</label
+          >
         </div>
       </div>
     </div>
