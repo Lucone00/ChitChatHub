@@ -5,9 +5,9 @@
         ChitChatHub
       </ng-container>
       <ng-template #groupNameTemplate>
-        <div>
-          <i class="bi bi-arrow-left-circle"></i>
-          {{ selectedGroup.groupName }}
+        <div (click)="goBackToGroups()">
+          <i class="fa-solid fa-circle-chevron-left"></i>
+          {{ selectedGroup?.groupName }}
         </div>
       </ng-template>
     </div>

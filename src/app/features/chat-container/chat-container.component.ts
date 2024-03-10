@@ -9,7 +9,7 @@ import { GetChatGroupsDataService } from '../services/get-chat-groups-data.servi
 })
 export class ChatContainerComponent {
   groups: IChatList[] = [];
-  selectedGroup!: IChatList;
+  selectedGroup!: IChatList | null;
   selectedChat!: IChat | null;
 
   constructor(private getChatService: GetChatGroupsDataService) {}
@@ -25,5 +25,10 @@ export class ChatContainerComponent {
 
   selectChat(chat: IChat): void {
     this.selectedChat = chat;
+  }
+
+  goBackToGroups(): void {
+    this.selectedGroup = null;
+    this.selectedChat = null;
   }
 }
