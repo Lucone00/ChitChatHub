@@ -46,21 +46,18 @@
       </div>
 
       <div class="flex-grow-1"></div>
-      
+
       <div class="message-input">
-        <div class="form-outline" data-mdb-input-init>
+        <div class="form-outline d-flex" data-mdb-input-init>
           <textarea
             [(ngModel)]="newMessage"
-            class="form-control"
-            id="textAreaExample"
-            rows="4"
+            class="form-control col-3"
+            id="messageArea"
+            rows="2"
           ></textarea>
-          <label
-            (click)="sendMessage()"
-            class="form-label"
-            for="textAreaExample"
-            >Send</label
-          >
+          <button type="button" class="btn btn-success" (click)="sendMessage()">
+            Send
+          </button>
         </div>
       </div>
     </div>

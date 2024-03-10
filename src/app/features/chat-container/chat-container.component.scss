@@ -27,3 +27,13 @@
   padding: 0.25rem;
   border-top-right-radius: 1rem;
 }
+
+.message-input {
+  margin: 0 auto;
+  & textarea {
+    width: 25rem;
+  }
+  & button {
+    color: white;
+  }
+}
