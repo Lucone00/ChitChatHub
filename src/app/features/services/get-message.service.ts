@@ -1,13 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { IMessage } from '../interfaces/IChatGroups.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class GetMessageService {
-  constructor() {}
-
   private messages: IMessage[] = [
     { sender: 'David', content: 'Buongiorno vicini!', timestamp: new Date() },
     {
@@ -18,7 +16,14 @@ export class GetMessageService {
     },
   ];
 
+  private messagesSubject = new BehaviorSubject<IMessage[]>(this.messages);
+
   getMessages(): Observable<IMessage[]> {
     return of(this.messages);
+  }
+
+  sendMessage(message: IMessage): void {
+    this.messages.push(message);
+    this.messagesSubject.next(this.messages);
   }
 }

@@ -35,13 +35,22 @@
 
   <div class="chat-details bg-warning-subtle">
     <div *ngIf="selectedChat">
+
       <div class="chat-name border-bottom bg-warning bg-gradient">
         <p class="m-3">{{ selectedChat.chat }}</p>
       </div>
+
       <div *ngFor="let message of messages" class="message">
         <strong>{{ message.sender }}:</strong> {{ message.content }} ({{
           message.timestamp | date: 'HH:mm'
         }})
+      </div>
+
+      <div class="message-input">
+        <div class="form-outline" data-mdb-input-init>
+          <textarea [(ngModel)]="newMessage" class="form-control" id="textAreaExample" rows="4"></textarea>
+          <label (click)="sendMessage()" class="form-label" for="textAreaExample">Send</label>
+        </div>
       </div>
     </div>
   </div>
