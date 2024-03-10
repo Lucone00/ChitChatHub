@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IChat, IChatList } from '../interfaces/IChatGroups.interface';
+import { IChat, IChatList, IMessage } from '../interfaces/IChatGroups.interface';
 import { GetChatGroupsDataService } from '../services/get-chat-groups-data.service';
+import { GetMessageService } from '../services/get-message.service';
 
 @Component({
   selector: 'app-chat-container',
@@ -11,11 +12,20 @@ export class ChatContainerComponent {
   groups: IChatList[] = [];
   selectedGroup!: IChatList | null;
   selectedChat!: IChat | null;
+  messages: IMessage[] = [];
 
-  constructor(private getChatService: GetChatGroupsDataService) {}
+  constructor(private getChatService: GetChatGroupsDataService, private getMessageService: GetMessageService) {}
+  
 
   ngOnInit(): void {
     this.groups = this.getChatService.getGroups();
+    this.getMessages();
+  }
+
+  getMessages(): void {
+    this.getMessageService.getMessages().subscribe((messages) => {
+      this.messages = messages;
+    });
   }
 
   selectGroup(group: IChatList): void {
