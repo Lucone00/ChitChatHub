@@ -7,9 +7,10 @@
       <ng-template #groupNameTemplate>
         <div (click)="goBackToGroups()">
           <i class="fa-solid fa-circle-chevron-left"></i>
-          <span class="selected-group-header">{{
-            selectedGroup?.groupName
-          }}</span>
+          <span class="selected-group-header"
+            ><i class="fa-solid fa-house-user"></i>
+            {{ selectedGroup?.groupName }}</span
+          >
         </div>
       </ng-template>
     </div>
@@ -45,7 +46,7 @@
         >
       </div>
 
-      <div *ngFor="let message of messages" class="message p-2">
+      <div *ngFor="let message of messages" class="p-2">
         <strong>{{ message.sender }}:</strong> {{ message.content }} ({{
           message.timestamp | date : "HH:mm"
         }})

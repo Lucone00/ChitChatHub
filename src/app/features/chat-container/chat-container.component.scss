@@ -19,6 +19,9 @@
   & :hover {
     cursor: pointer;
   }
+  @media (max-width: 768px) {
+    border-top-right-radius: 1rem;
+  }
 }
 
 .sidebar {
@@ -49,9 +52,9 @@
 }
 
 .chat-details {
-  flex-grow: 1;
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
+  color: white;
 
   @media (max-width: 768px) {
     width: 100%;
@@ -67,14 +70,14 @@
   padding: 0.4rem;
   border-top-right-radius: 1rem;
   color: white;
+  @media (max-width: 768px) {
+    border-top-right-radius: 0;
+  }
 }
 
 .message-input {
   margin: 0 auto;
   & textarea {
-    width: 200%;
-  }
-  & button {
-    color: white;
+    width: 100%;
   }
 }
