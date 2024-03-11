@@ -2,6 +2,7 @@
   display: flex;
   height: 70vh;
   width: 70%;
+  border-radius: 1rem;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -11,8 +12,9 @@
 
 .chat-header {
   border-bottom: 1px solid gray;
+  border-top-left-radius: 1rem;
   font-size: 1.2rem;
-  color: coral;
+  color: white;
   font-weight: 600;
   & :hover {
     cursor: pointer;
@@ -62,14 +64,15 @@
 
 .chat-name {
   font-size: 1.3rem;
-  padding: 0.25rem;
+  padding: 0.4rem;
   border-top-right-radius: 1rem;
+  color: white;
 }
 
 .message-input {
   margin: 0 auto;
   & textarea {
-    width: 100%;
+    width: 200%;
   }
   & button {
     color: white;

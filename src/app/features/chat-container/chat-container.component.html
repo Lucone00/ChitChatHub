@@ -1,13 +1,15 @@
-<div class="container border border-dark-subtle rounded-4 mt-4 p-0">
+<div class="container border border-dark-subtle mt-4 p-0">
   <div class="sidebar">
-    <div class="chat-header p-3">
+    <div class="chat-header p-3 bg-dark bg-gradient">
       <ng-container *ngIf="!selectedGroup; else groupNameTemplate">
         ChitChatHub
       </ng-container>
       <ng-template #groupNameTemplate>
         <div (click)="goBackToGroups()">
           <i class="fa-solid fa-circle-chevron-left"></i>
-         <span class="selected-group-header">{{ selectedGroup?.groupName }}</span>
+          <span class="selected-group-header">{{
+            selectedGroup?.groupName
+          }}</span>
         </div>
       </ng-template>
     </div>
@@ -18,7 +20,9 @@
         (click)="selectGroup(group)"
         class="border-bottom p-3 group-list"
       >
-        {{ group.groupName }}
+        <span>
+          <i class="fa-solid fa-house-user"></i> {{ group.groupName }}
+        </span>
       </div>
     </div>
 
@@ -28,15 +32,17 @@
         class="border-bottom p-3 group-list"
         (click)="selectChat(chatList)"
       >
-        {{ chatList.chat }}
+        <span><i class="fa-solid fa-circle-user"></i> {{ chatList.chat }}</span>
       </div>
     </div>
   </div>
 
-  <div class="chat-details bg-warning-subtle d-flex flex-column h-100">
+  <div class="chat-details bg-success bg-gradient d-flex flex-column h-100">
     <div *ngIf="selectedChat" class="flex-grow-1 d-flex flex-column">
-      <div class="chat-name border-bottom bg-warning bg-gradient">
-        <p class="m-3">{{ selectedChat.chat }}</p>
+      <div class="chat-name border-bottom bg-dark bg-gradient">
+        <span class="m-3"
+          ><i class="fa-solid fa-circle-user"></i> {{ selectedChat.chat }}</span
+        >
       </div>
 
       <div *ngFor="let message of messages" class="message p-2">
@@ -51,12 +57,12 @@
         <div class="form-outline d-flex" data-mdb-input-init>
           <textarea
             [(ngModel)]="newMessage"
-            class="form-control col-3"
+            class="form-control"
             id="messageArea"
-            rows="2"
+            rows="1"
           ></textarea>
-          <button type="button" class="btn btn-success" (click)="sendMessage()">
-            Send
+          <button type="button" class="btn btn-dark" (click)="sendMessage()">
+            <i class="fa-solid fa-paper-plane"></i>
           </button>
         </div>
       </div>
