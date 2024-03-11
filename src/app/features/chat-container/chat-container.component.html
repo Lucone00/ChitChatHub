@@ -7,7 +7,7 @@
       <ng-template #groupNameTemplate>
         <div (click)="goBackToGroups()">
           <i class="fa-solid fa-circle-chevron-left"></i>
-         <span class="selected-group">{{ selectedGroup?.groupName }}</span>
+         <span class="selected-group-header">{{ selectedGroup?.groupName }}</span>
         </div>
       </ng-template>
     </div>
@@ -16,7 +16,7 @@
       <div
         *ngFor="let group of groups"
         (click)="selectGroup(group)"
-        class="border-bottom p-3"
+        class="border-bottom p-3 group-list"
       >
         {{ group.groupName }}
       </div>
@@ -25,7 +25,7 @@
     <div *ngIf="selectedGroup">
       <div
         *ngFor="let chatList of selectedGroup.chats"
-        class="border-bottom p-3"
+        class="border-bottom p-3 group-list"
         (click)="selectChat(chatList)"
       >
         {{ chatList.chat }}

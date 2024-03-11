@@ -12,6 +12,11 @@
 .chat-header {
   border-bottom: 1px solid gray;
   font-size: 1.2rem;
+  color: coral;
+  font-weight: 600;
+  & :hover {
+    cursor: pointer;
+  }
 }
 
 .sidebar {
@@ -29,9 +34,16 @@
   }
 }
 
-.selected-group {
+.selected-group-header {
   margin-left: 0.3rem;
   text-decoration: underline;
+}
+
+.group-list {
+  &:hover {
+    background-color: #ccc;
+    cursor: pointer;
+  }
 }
 
 .chat-details {
