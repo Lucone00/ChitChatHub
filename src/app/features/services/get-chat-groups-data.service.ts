@@ -9,7 +9,7 @@ export class GetChatGroupsDataService {
     return [
       {
         groupName: 'Condominio 1',
-        id:1,
+        id: 1,
         chats: [
           { id: 1, chat: 'David' },
           { id: 2, chat: 'Paolo' },

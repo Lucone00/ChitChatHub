@@ -7,7 +7,7 @@
       <ng-template #groupNameTemplate>
         <div (click)="goBackToGroups()">
           <i class="fa-solid fa-circle-chevron-left"></i>
-          {{ selectedGroup?.groupName }}
+         <span class="selected-group">{{ selectedGroup?.groupName }}</span>
         </div>
       </ng-template>
     </div>
