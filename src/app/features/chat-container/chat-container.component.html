@@ -30,7 +30,7 @@
     <div *ngIf="selectedGroup">
       <div
         *ngFor="let chatList of selectedGroup.chats"
-        class="border-bottom p-3 group-list"
+        class="border-bottom p-2 group-list"
         (click)="selectChat(chatList)"
       >
         <span><i class="fa-solid fa-circle-user"></i> {{ chatList.chat }}</span>
